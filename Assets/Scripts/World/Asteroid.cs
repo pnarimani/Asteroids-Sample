@@ -37,12 +37,6 @@ namespace Asteroids.World
             }
         }
 
-        public float Rotation
-        {
-            get => _rigidbody.rotation;
-            set => _rigidbody.rotation = value;
-        }
-
         [Inject]
         public void Init(Factory factory, Random random, PlayerScoreData playerScoreData)
         {
@@ -51,9 +45,29 @@ namespace Asteroids.World
             _factory = factory;
         }
 
+        /// <summary>
+        /// Resets all the static fields on this class. It is necessary to reset static fields when you have Domain Reload disabled
+        /// https://docs.unity3d.com/Manual/DomainReloading.html 
+        /// </summary>
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        private static void ResetStaticFields()
+        {
+            ActiveAsteroids = 0;
+        }
+
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
+        }
+
+        private void OnDestroy()
+        {
+            // If we accidentally destroy an asteroid without returning it to the pool,
+            // we need to decrease the ActiveAsteroids or it will cause problems with asteroid spawning.
+            if (_pool != null)
+            {
+                ActiveAsteroids--;
+            }
         }
 
         public void Damage()

@@ -3,13 +3,14 @@ using Zenject;
 
 namespace Asteroids.Player
 {
-    public class PlayerMovement : IInitializable
+    public class PlayerMovement : IInitializable, IFixedTickable
     {
         private PlayerSettings _settings;
         private PlayerInputReceiver _input;
         private Rigidbody2D _rigidbody2D;
         private PlayerShooting _shooting;
         private Transform _transform;
+        private float _accelerationInput;
 
         public Vector2 Position
         {
@@ -26,9 +27,10 @@ namespace Asteroids.Player
             get => _rigidbody2D.rotation;
             set => _rigidbody2D.rotation = value;
         }
-        
+
         [Inject]
-        public void Init(PlayerSettings settings, PlayerInputReceiver input, Rigidbody2D rb, PlayerShooting shooting, Transform transform)
+        public void Init(PlayerSettings settings, PlayerInputReceiver input, Rigidbody2D rb, PlayerShooting shooting,
+            Transform transform)
         {
             _transform = transform;
             _shooting = shooting;
@@ -45,6 +47,16 @@ namespace Asteroids.Player
             _shooting.BulletShot += InputOnShoot;
         }
 
+        public void FixedTick()
+        {
+            if (Mathf.Abs(_accelerationInput) > 0)
+            {
+                Vector3 force = _transform.up * _settings.AccellerationMultiplier * _accelerationInput;
+                _rigidbody2D.AddForce(force, ForceMode2D.Impulse);
+                _accelerationInput = 0;
+            }
+        }
+
         private void InputOnShoot()
         {
             _rigidbody2D.AddForce(-_transform.up * _settings.ShootingRecoil, ForceMode2D.Impulse);
@@ -57,7 +69,7 @@ namespace Asteroids.Player
 
         private void InputOnAccelerate(float acceleration)
         {
-            _rigidbody2D.AddForce(_transform.up * _settings.AccellerationMultiplier * acceleration, ForceMode2D.Impulse);
+            _accelerationInput = acceleration;
         }
     }
 }
