@@ -20,7 +20,7 @@ namespace Asteroids.World
         public override void InstallBindings()
         {
             if (_randomSeed == 0)
-                _randomSeed = unchecked((int) DateTime.UtcNow.Ticks);
+                _randomSeed = (int) DateTime.UtcNow.Ticks;
             
             Container.BindInstance(new Random(_randomSeed));
             Container.BindInstance(_settings);

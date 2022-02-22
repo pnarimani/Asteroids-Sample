@@ -51,16 +51,6 @@
       },
       "hash": "4c1abfe9c3098320b7395faf9e64b26c30919643"
     },
-    "com.mnarimani.zenlistview": {
-      "version": "https://github.com/pnarimani/ZenListView.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {
-        "com.svermeulen.extenject": "9.0.2",
-        "com.mnarimani.zenextended": "1.0.0"
-      },
-      "hash": "93225c40726019314805641b50df56f0a3a16e9d"
-    },
     "com.svermeulen.extenject": {
       "version": "https://github.com/pnarimani/Extenject.git?path=UnityProject/Assets/Plugins/Zenject/Source#no_samples",
       "depth": 0,

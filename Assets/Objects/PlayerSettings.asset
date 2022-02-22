@@ -12,9 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a86e6b2e7504217951fcab4b997b5a4, type: 3}
   m_Name: PlayerSettings
   m_EditorClassIdentifier: 
-  AccellerationMultiplier: 0.02
+  AccellerationMultiplier: 0.2
   DecelerationOverTime: 1
   ShootingRecoil: 0.1
   FireRate: 200
-  BulletSpeed: 10
-  BulletLifetime: 2

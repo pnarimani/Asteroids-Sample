@@ -1,7 +1,6 @@
 {
   "dependencies": {
     "com.mnarimani.zenextended": "https://github.com/pnarimani/ZenExtended.git",
-    "com.mnarimani.zenlistview": "https://github.com/pnarimani/ZenListView.git",
     "com.svermeulen.extenject": "https://github.com/pnarimani/Extenject.git?path=UnityProject/Assets/Plugins/Zenject/Source#no_samples",
     "com.mnarimani.audoty": "https://github.com/pnarimani/Audoty.git",
     "com.cysharp.messagepipe": "https://github.com/Cysharp/MessagePipe.git?path=src/MessagePipe.Unity/Assets/Plugins/MessagePipe",
