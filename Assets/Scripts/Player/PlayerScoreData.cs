@@ -1,5 +1,7 @@
 using Asteroids.Signals;
+using JetBrains.Annotations;
 using MessagePipe;
+using NaughtyAttributes;
 using UnityEngine;
 using Zenject;
 
@@ -31,6 +33,18 @@ namespace Asteroids.Player
         {
             _scoreUpdated = scoreUpdated;
             _score = 0;
+        }
+
+        [Button, UsedImplicitly]
+        private void PublishScoreUpdated()
+        {
+            if (!Application.isPlaying)
+            {
+                Debug.LogError("Publish ScoreUpdated is only available in play mode");
+                return;
+            }
+            
+            _scoreUpdated?.Publish(new ScoreUpdated(0, _score));
         }
     }
 }

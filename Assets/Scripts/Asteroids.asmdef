@@ -9,7 +9,8 @@
         "ZenListView",
         "MessagePipe",
         "MessagePipe.Zenject",
-        "Unity.TextMeshPro"
+        "Unity.TextMeshPro",
+        "NaughtyAttributes.Core"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
