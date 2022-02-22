@@ -6,7 +6,7 @@ namespace Asteroids.Player
     public class PlayerMovement : IInitializable, IFixedTickable
     {
         private PlayerSettings _settings;
-        private PlayerInputReceiver _input;
+        private IPlayerInput _input;
         private Rigidbody2D _rigidbody2D;
         private PlayerShooting _shooting;
         private Transform _transform;
@@ -29,7 +29,11 @@ namespace Asteroids.Player
         }
 
         [Inject]
-        public void Init(PlayerSettings settings, PlayerInputReceiver input, Rigidbody2D rb, PlayerShooting shooting,
+        public void Init(
+            PlayerSettings settings,
+            IPlayerInput input,
+            Rigidbody2D rb,
+            PlayerShooting shooting,
             Transform transform)
         {
             _transform = transform;

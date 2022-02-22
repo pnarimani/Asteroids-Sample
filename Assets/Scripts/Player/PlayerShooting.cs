@@ -9,7 +9,7 @@ namespace Asteroids.Player
     public class PlayerShooting : IInitializable
     {
         private PlayerBullet.Factory _bulletFactory;
-        private PlayerInputReceiver _input;
+        private IPlayerInput _input;
         private PlayerSettings _playerSettings;
         private Rigidbody2D _rigidbody;
         private WorldSettings _worldSettings;
@@ -23,7 +23,7 @@ namespace Asteroids.Player
         [Inject]
         public void Init(
             PlayerBullet.Factory bulletFactory, 
-            PlayerInputReceiver input,
+            IPlayerInput input,
             PlayerSettings playerSettings,
             Rigidbody2D rb,
             WorldSettings worldSettings,

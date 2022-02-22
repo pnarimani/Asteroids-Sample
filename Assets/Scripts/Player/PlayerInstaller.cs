@@ -11,8 +11,7 @@ namespace Asteroids.Player
         public override void InstallBindings()
         {
             Container.BindInstance(_settings);
-            
-            NewComponent<PlayerInputReceiver>();
+
             NewComponent<PlayerHealth>().NonLazy();
 
             // An example of how you would add functionality to a gameobject without having MonoBehaviours
@@ -28,6 +27,13 @@ namespace Asteroids.Player
             Container.Bind<IPlayerAudio>()
                 .To<PlayerAudio>()
                 .FromComponentOnRoot()
+                .AsSingle();
+
+            // It is possible to use different IPlayerInput implementations for different platforms.
+            // We can also mock IPlayerInput for unit tests.
+            Container.Bind<IPlayerInput>()
+                .To<PlayerInputReceiver>()
+                .FromNewComponentOnRoot()
                 .AsSingle();
 
             // Bind components which behaviour classes might find useful

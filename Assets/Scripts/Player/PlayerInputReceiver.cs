@@ -9,7 +9,14 @@ namespace Asteroids.Player
 
     public delegate void AccelerateHandler(float acceleration);
 
-    public class PlayerInputReceiver : MonoBehaviour
+    public interface IPlayerInput
+    {
+        event LookDirectionHandler LookDirection;
+        event ShootHandler Shoot;
+        event AccelerateHandler Accelerate;
+    }
+
+    public class PlayerInputReceiver : MonoBehaviour, IPlayerInput
     {
         private Camera _camera;
 
