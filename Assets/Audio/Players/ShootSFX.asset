@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9133957aee89be04c99407bda9454f63, type: 3}
+  m_Name: ShootSFX
+  m_EditorClassIdentifier: 
+  _clips:
+  - {fileID: 8300000, guid: d159de7ab4be875449584652bb989a44, type: 3}
+  _loop: 0
+  _liveLinkLoop: 1
+  _saveLoop: 0
+  _singleton: 0
+  _allowInterrupt: 1
+  _saveSingelton: 0
+  _volume: 0.623
+  _liveLinkVolume: 1
+  _saveVolume: 0
+  _minDistance: 1
+  _maxDistance: 500
+  _liveLinkDistances: 1
+  _saveDistances: 0
+  _pitch: {x: 0.6488662, y: 1}
+  _liveLinkPitch: 1
+  _savePitch: 0
+  _dopplerLevel: 0
+  _liveLinkDopplerLevel: 1
+  _saveDopplerLevel: 0
+  _playFadeTime: 0
+  _interruptFadeTime: 0.2
+  _keepEditorPlayModeChanges: 0
+  _randomizedSaveKey: 249297894
+  _specificClipParameter: 

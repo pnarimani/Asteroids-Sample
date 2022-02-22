@@ -1,0 +1,26 @@
+{
+    "name": "Asteroids",
+    "rootNamespace": "Asteroids",
+    "references": [
+        "Audoty",
+        "UniTask",
+        "ZenExtended",
+        "Zenject",
+        "ZenListView",
+        "MessagePipe",
+        "MessagePipe.Zenject",
+        "Unity.TextMeshPro"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "DOTween.dll",
+        "Zenject-usage.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
